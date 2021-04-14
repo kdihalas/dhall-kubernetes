@@ -4,7 +4,7 @@ let Prelude =
 let map = Prelude.List.map
 
 let kubernetes =
-      ../package.dhall sha256:7150ac4309a091740321a3a3582e7695ee4b81732ce8f1ed1691c1c52791daa1
+      ../package.dhall sha256:532e110f424ea8a9f960a13b2ca54779ddcac5d5aa531f86d82f41f8f18d7ef1
 
 let Service = { name : Text, host : Text, version : Text }
 
@@ -25,7 +25,7 @@ let makeRule
           { paths =
             [ { backend =
                 { serviceName = service.name
-                , servicePort = kubernetes.IntOrString.Int 80
+                , servicePort = kubernetes.IntOrString.Int +80
                 }
               , path = None Text
               }
